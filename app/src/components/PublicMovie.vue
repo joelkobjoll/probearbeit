@@ -2,6 +2,7 @@
 	<b-container>
         <header class="mb-5">
             <h1 class="h1">{{ movie.title }}</h1>
+            <h3>Genre: {{ genre.name }}</h3>
             <p>{{ movie.description }}</p>
 
             <b-alert :show="loading" variant="info">Loading...</b-alert>
@@ -33,12 +34,14 @@
 
 <script>
     import {Movies} from '@/controller/movies';
+    import {Genries} from '@/controller/genries';
 	export default {
 		data() {
 			return {
 				loading: false,
 				model: {},
                 movie: {},
+                genre: {},
                 related: {},
 			};
 		},
@@ -49,7 +52,9 @@
 			async refreshMovie() {
 				this.loading = true;
                 this.movie = await Movies.getMovie(this.$route.params.id);
-                this.related = await Movies.getMoviesByGenreId(this.movie.genreId);
+                this.related = (await Movies.getMoviesByGenreId(this.movie.genreId))
+                    .filter(movie => movie.id !== this.movie.id);
+                this.genre = (await Genries.getGenries()).filter(genre => genre.id === this.movie.genreId).pop();
 				this.loading = false;
             },
         },
