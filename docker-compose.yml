@@ -28,3 +28,15 @@ services:
             yarn serve"
         depends_on:
             - db
+    app:
+        build:
+            context: .
+            dockerfile: app.dockerfile
+        ports:
+            - "9292:8080"
+        volumes:
+            - "./app:/app/"
+        command:  >
+            sh -c "yarn install && yarn build"
+        env_file:
+            - ./app/.env
