@@ -1,0 +1,30 @@
+version: "3.3"
+
+services: 
+    db:
+        image: mysql
+        restart: always
+        command: --default-authentication-plugin=mysql_native_password
+        ports:
+            - "3310:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: "123456"
+            MYSQL_DATABASE: "movies"
+        volumes:
+            - ../data/mysql/db.sql:/data/application/init.sql
+    api:
+        build:
+            context: .
+            dockerfile: api.dockerfile
+        env_file:
+            - ./api/.env
+        ports:
+            - "9293:8080"
+        volumes:
+            - "./api:/api/"
+        command:  >
+            sh -c "yarn install && 
+            yarn buildDev &&
+            yarn serve"
+        depends_on:
+            - db
