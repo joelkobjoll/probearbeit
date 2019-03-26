@@ -1,0 +1,1 @@
+import {modelMovies} from '@/database/tables/movies'

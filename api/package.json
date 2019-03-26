@@ -1,0 +1,34 @@
+{
+  "scripts": {
+    "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js",
+    "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js",
+    "watch": "rm -rf dist && webpack --watch --mode development --config webpack.server.config.js",
+    "start": "node ./dist/server.js",
+    "serve": "nodemon ./dist/server.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "connect-timeout": "^1.9.0",
+    "cors": "^2.8.5",
+    "dotenv-webpack": "^1.6.0",
+    "epilogue": "^0.7.1",
+    "express": "^4.16.4",
+    "memory-cache": "^0.2.0",
+    "mysql2": "^1.6.4",
+    "request": "^2.88.0",
+    "sequelize": "^4.42.0",
+    "transmission": "^0.4.9",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
