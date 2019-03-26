@@ -37,6 +37,6 @@ services:
         volumes:
             - "./app:/app/"
         command:  >
-            sh -c "yarn install && yarn build"
+            sh -c "yarn install && yarn build && yarn serve"
         env_file:
             - ./app/.env
