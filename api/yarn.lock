@@ -1829,15 +1829,6 @@ enhanced-resolve@^4.1.0:
     memory-fs "^0.4.0"
     tapable "^1.0.0"
 
-epilogue@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/epilogue/-/epilogue-0.7.1.tgz#1e261ec02a28bfb6ec19c488b1f81ad0039eb5e1"
-  integrity sha1-HiYewCoov7bsGcSIsfga0AOeteE=
-  dependencies:
-    bluebird "^3.0.0"
-    inflection "^1.7.1"
-    lodash "^4.8.2"
-
 errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.7.tgz#4684d71779ad39af177e3f007996f7c67c852618"
@@ -2048,6 +2039,16 @@ fill-range@^4.0.0:
     is-number "^3.0.0"
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
+
+finale-rest@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/finale-rest/-/finale-rest-1.0.2.tgz#34bd344a1d62f386c35a8af67eb6edf221f48a36"
+  integrity sha512-3LSGDtVLqhB8aNrzDnfWp8qmS1Ku7H0fdXEpFoRryZ9p7fWZKs+71ENdDgGWoLSIxfFp0Dt5moa3bR3lOQTbzQ==
+  dependencies:
+    bluebird "^3.0.0"
+    inflection "^1.7.1"
+    lodash "^4.17.5"
+    moment "^2.19.3"
 
 finalhandler@1.1.1:
   version "1.1.1"
@@ -2855,7 +2856,7 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
 
-lodash@^4.17.1, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.8.2:
+lodash@^4.17.1, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
@@ -3102,6 +3103,11 @@ moment-timezone@^0.5.14:
   version "2.23.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
   integrity sha512-3IE39bHVqFbWWaPOMHZF98Q9c3LDKGTmypMiTM2QygGXXElkFWIH7GxfmlwmY2vwa+wmNsoYZmG2iusf1ZjJoA==
+
+moment@^2.19.3:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
