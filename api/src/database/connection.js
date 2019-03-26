@@ -1,7 +1,7 @@
 import {app} from '@/app'
 
 const Sequelize = require('sequelize')
-const epilogue = require('epilogue')
+const finale = require('finale-rest')
 
 const DB_HOST = process.env.DB_HOST;
 const DB_PORT = process.env.DB_PORT || 3306;
@@ -15,7 +15,7 @@ export const db = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
     dialect: 'mysql',
 });
 
-epilogue.initialize({
+finale.initialize({
     app: app,
     sequelize: db
 })
