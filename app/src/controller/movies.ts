@@ -35,4 +35,7 @@ export const Movies = {
     getMoviesByGenreId(id: number) {
         return this.execute('get', `/movies?genreId=${id}`);
     },
+    getMoviesByTitle(title: string, limit: number = 10) {
+        return this.execute('get', `/movies?qt=${title}&count=${limit}`);
+    },
 };
