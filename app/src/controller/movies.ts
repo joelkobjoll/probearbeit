@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const client = axios.create({
-    baseURL: `http://${process.env.VUE_APP_API_HOST}:${process.env.VUE_APP_API_PORT}/`
+    baseURL: `${window.location.protocol}//${process.env.VUE_APP_API_HOST}:${process.env.VUE_APP_API_PORT}/`
 });
 
 export const Movies = {
