@@ -22,7 +22,7 @@
     "memory-cache": "^0.2.0",
     "mysql2": "^1.6.4",
     "request": "^2.88.0",
-    "sequelize": "^5.2.1",
+    "sequelize": "^4.42.0",
     "transmission": "^0.4.9",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.28.3",
