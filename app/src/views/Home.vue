@@ -1,16 +1,16 @@
 <template>
   <div class="home">
-    <Dashboard/>
+    <Search/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Dashboard from '@/components/Dashboard.vue';
+import Search from '@/components/Search.vue';
 
 @Component({
   components: {
-    Dashboard,
+    Search,
   },
 })
 
