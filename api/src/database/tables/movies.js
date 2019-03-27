@@ -20,6 +20,10 @@ export const tableMovies = finale.resource({
             attributes: [ 'genreId' ]
         },
         {
+            param: 'qt', 
+            attributes: [ 'title' ]
+        },
+        {
             param: 'q', 
         }
     ] 
