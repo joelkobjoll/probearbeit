@@ -2,17 +2,18 @@
 	<div class="container-fluid mt-4">
 		<h1 class="h1">Search</h1>
 
-		<div id="search-form">
+		<div>
 			<b-nav-form class="mb-5">
-				<b-form @submit.prevent="searchMovie">
-					<b-form-input id="search" v-model="q" size="sm" class="mr-sm-2" type="text" placeholder="Search" />
+				<b-form @submit.prevent="searchMovie(q)">
+					<span id="search-input">
+						<b-form-input id="search" v-model="q" size="sm" class="mr-sm-2" type="text" placeholder="Search" />
+					</span>
 					<b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
 				</b-form>
 			</b-nav-form>
 
 			<b-popover
-			target="search"
-			disabled="true"
+			target="search-input"
 			:show.sync="autocomplete.show"
 			placement="bottom"
 			ref="popover"
@@ -21,7 +22,6 @@
 					<b-list-group-item @click="searchMovie(result.title.toLowerCase())" v-for="result in autocomplete.results" :key="result.id">{{ result.title }}</b-list-group-item>
 				</b-list-group>
 			</b-popover>
-
 		</div>
 
 		<template v-if="loading">
@@ -62,16 +62,20 @@
 					results: [],
 					show: false,
 				},
-				q: '',
+				q: this.$route.query.q || '',
 				results: [],
 				loading: false,
 			}
 		},
+		created() {
+			if (this.q.length) {
+				this.searchMovie(this.q);
+			}
+		},
 		methods: {
-			async searchMovie(q) {
-				this.results = await Movies.searchMovie(q || this.q);
-				this.autocomplete.results = [];
-				this.autocomplete.show = false;
+			async searchMovie(query) {
+				this.$router.replace({ query: {q: query} })
+				this.results = await Movies.searchMovie(query);
 			}
 		},
 		watch: {
