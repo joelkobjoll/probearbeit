@@ -58,9 +58,9 @@
 		data() {
 			return {
 				autocomplete: {
-					q: '',
 					results: [],
 					show: false,
+					disabled: false,
 				},
 				q: this.$route.query.q || '',
 				results: [],
@@ -74,13 +74,18 @@
 		},
 		methods: {
 			async searchMovie(query) {
-				this.$router.replace({ query: {q: query} })
+				this.autocomplete.disabled = true;
+				this.q = query;
+				this.$router.replace({ query: {q: query} });
 				this.results = await Movies.searchMovie(query);
+				this.autocomplete.show = false;
+				this.autocomplete.results = [];
+				this.autocomplete.disabled = false;
 			}
 		},
 		watch: {
 			async q() {
-				if (2 < this.q.length) {
+				if (2 < this.q.length && !this.autocomplete.disabled) {
 					this.autocomplete.results = await Movies.getMoviesByTitle(this.q);
 					this.autocomplete.show = this.autocomplete.results.length ? true : false;
 				}
