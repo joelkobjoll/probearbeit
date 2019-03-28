@@ -12,16 +12,18 @@
 				</b-form>
 			</b-nav-form>
 
-			<b-popover
-			target="search-input"
-			:show.sync="autocomplete.show"
-			placement="bottom"
-			ref="popover"
-			>
-				<b-list-group>
-					<b-list-group-item @click="searchMovie(result.title.toLowerCase())" v-for="result in autocomplete.results" :key="result.id">{{ result.title }}</b-list-group-item>
-				</b-list-group>
-			</b-popover>
+			<template v-if="autocomplete.show">
+				<b-popover
+				target="search-input"
+				:show.sync="autocomplete.show"
+				placement="bottom"
+				ref="popover"
+				>
+					<b-list-group>
+						<b-list-group-item @click="searchMovie(result.title.toLowerCase())" v-for="result in autocomplete.results" :key="result.id">{{ result.title }}</b-list-group-item>
+					</b-list-group>
+				</b-popover>
+			</template>
 		</div>
 
 		<template v-if="loading">
